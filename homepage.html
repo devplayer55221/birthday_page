@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Happy Birthday Khush
+	</title>
+	<style>
+
+		#heading {
+			text-align: center;
+			font-size: 100px;
+			font-family: helvetica;
+			font-weight: 2000;
+		}
+		#btn {
+			margin: 0;
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  /*-ms-transform: translate(-50%, -50%);*/
+			  transform: translate(-50%, -50%);
+			  background-color: #000000;
+			  border: none;
+			  color: white;
+			  padding: 32px 48px;
+			  text-align: center;
+			  font-family: helvetica;
+			  font-size: 30px;
+		}
+
+		#wishes {
+			margin: 0;
+			position: absolute;
+			border: none;
+			text-align: center;
+			top: 70%;
+			left: 20%;
+			font-family: helvetica;
+			font-size: 24px;
+			font-weight: bold;
+		}
+	</style>
+	<script>
+		var i=0;
+		function soundfun() {
+			document.getElementById("my_audio").pause();
+		}
+
+
+		function myfunc() {
+			window.location.href = "newfile.html";
+		}
+
+		window.onload = function() {
+			document.getElementById("my_audio").play();
+		}
+
+		function movefn() {
+			document.getElementById("my_audio").play();
+			 var myvar = setInterval(wishfunc, 3000);
+		}
+
+		function wishfunc() {
+			console.log(i);
+			var myarr = ["A birth-date is a reminder to celebrate the life as well as to update the life.","The circumstances surrounding your birth is not as important as the opportunity to live life.","Even if you are king of kings, you cannot mourn your death, the only option is to celebrate your birth ... Happy Birthday","There is still no cure for the common birthday.","Every day is a gift. But some days are packaged better.","I hate birthdays, did you know, too many can actually kill you?","With all boldness, brace the eternity of your existence."];
+			document.getElementById("wishes").innerHTML = myarr[i];
+			if(i==6)
+				i=-1;
+			i++;
+		}
+
+	</script>
+</head>
+	<body onload="movefn()">
+		<br><br><br><br><br>
+			<button id="pauses" onclick="soundfun()">pause</button>
+			<audio id="my_audio" src="22.mp3" loop="loop"></audio>
+			<div id="heading">Happy Birthday Khush</div>
+			<button type="button" id="btn" onclick="myfunc()">Collect your wishes first!!<br><br><strong>Touch to see the gallery</strong></button>
+			<br><br><br>
+			
+			<div id="wishes"></div>
+	</body>
+</html>
